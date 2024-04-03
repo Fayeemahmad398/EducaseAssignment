@@ -25,9 +25,12 @@ function Profile() {
                     </div>
                     {
                         currUserInfo &&
-                        <div style={{ display: "flex", flexDirection: "column" }}>
-                            <div style={{fontWeight:"600"}}>{currUserInfo.fullname}</div>
-                            <div>{currUserInfo.email}</div>
+                        <div style={{
+                            display: "flex", flexDirection: "column",
+                        }} >
+                            <div className="name-email" style={{ fontWeight: "600", }}>{currUserInfo.fullname}</div>
+
+                            <div className="name-email">{currUserInfo.email}</div>
                         </div>
                     }
                 </div>
