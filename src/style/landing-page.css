@@ -1,0 +1,32 @@
+
+.welcome-page {
+  font-size: 20px;
+  font-weight: 900;
+}
+.landing-page-p {
+  color: grey;
+  font-size: 15px;
+  font: normal normal normal 18px/26px Rubik;
+}
+.landing-btn {
+  height: 40px;
+  width: 100%;
+  background: #6c25ff;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+}
+.landing-btn:hover {
+  cursor: pointer;
+}
+.login-landing-btn {
+  background: #6c25ff4b;
+  font: normal normal medium 16px/17px Rubik;
+  color: #1d2226;
+}
+
+@media (max-width: 380px) {
+  .landing-page {
+    min-width: 95%;
+  }
+}
