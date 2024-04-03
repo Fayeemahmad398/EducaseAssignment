@@ -16,8 +16,8 @@ body {
   align-items: center;
 }
 .forms {
-  min-width: 350px;
-  height: 400px;
+  width: 350px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -27,8 +27,12 @@ body {
 
   gap: 15px;
 }
-@media (max-width: 380px) {
+@media (max-width: 400px) {
   .forms {
-    min-width: 95%;
+    width: 95%;
+  }
+  .unknown{
+    width: 80% !important;
   }
 }
+

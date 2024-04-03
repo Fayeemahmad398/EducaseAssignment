@@ -40,14 +40,18 @@ function Login() {
     let users = JSON.parse(localStorage.getItem("allUsers")) || [];
     if (users.length == 0) {
       toast.warn("Please create account first");
-      navigate("/signup");
+      setTimeout(() => {
+        navigate("/signup");
+      }, 1500);
       return;
     }
     let isUserAuthenticate = checkAuthentication(users);
     if (isUserAuthenticate) {
       localStorage.setItem("currUser", JSON.stringify(credential));
       setCredential({ email: "", password: "" })
-      navigate("/profile");
+      setTimeout(() => {
+        navigate("/profile");
+      }, 1500);
       return;
     }
 
@@ -71,6 +75,8 @@ function Login() {
         placeholder="Enter email address"
         type="email" name="email" onChange={handleCredential}
         size="small"
+        inputProps={{ color: "#6c25ff;" }}
+        InputLabelProps={{ style: { color: "#6c25ff" } }}
       />
       <TextField
         required
@@ -80,6 +86,8 @@ function Login() {
         placeholder="Enter password"
         type="password" name="password" onChange={handleCredential}
         size="small"
+        InputLabelProps={{ style: { color: "#6c25ff" } }}
+
 
       />
       <button className={`create-acct-btn landing-btn ${(credential.email && credential.password) ? "dark" : "light"}`}

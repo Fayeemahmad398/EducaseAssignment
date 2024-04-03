@@ -2,6 +2,8 @@ import { useState } from "react"
 import "../style/signup.css"
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { Radio, TextField } from "@mui/material";
+import "../style/signup.css"
 
 function Signup() {
     const navigate = useNavigate();
@@ -58,28 +60,85 @@ function Signup() {
 
 
     return (
-        <div>
-            <h3>Create your popX acount</h3>
-            <input type="text" name="fullname" onChange={handleChangeByUser} />
-            <input type="tel" name="phoneNo" onChange={handleChangeByUser} />
-            <input type="email" name="email" onChange={handleChangeByUser} />
-            <input type="password" name="password" onChange={handleChangeByUser} />
-            <input type="text" name="company" onChange={handleChangeByUser} />
+        <div className="forms">
+            <h3 className="create-acc-heading">Create your popX acount</h3>
+            <TextField
+                required
+                id="outlined-required"
+                label="Enter fullname"
+                defaultValue=""
+                placeholder="Enter fullname"
+                type="text" name="fullname" onChange={handleChangeByUser}
+                size="small"
+                inputProps={{ color: "#6c25ff;" }}
+                InputLabelProps={{ style: { color: "#6c25ff" } }}
+            />
+            <TextField
+                required
+                id="outlined-required"
+                label="Enter phone"
+                defaultValue=""
+                placeholder="Enter phone"
+                type="tel" name="phoneNo" onChange={handleChangeByUser}
+                size="small"
+                inputProps={{ color: "#6c25ff;" }}
+                InputLabelProps={{ style: { color: "#6c25ff" } }}
+            />
+            <TextField
+                required
+                id="outlined-required"
+                label="Enter email Address"
+                defaultValue=""
+                placeholder="Enter email address"
+                type="email" name="email" onChange={handleChangeByUser}
+                size="small"
+                inputProps={{ color: "#6c25ff;" }}
+                InputLabelProps={{ style: { color: "#6c25ff" } }}
+            />
+            <TextField
+                required
+                id="outlined-required"
+                label="Enter password"
+                defaultValue=""
+                placeholder="Enter password"
+                type="password" name="password" onChange={handleChangeByUser}
+                size="small"
+                inputProps={{ color: "#6c25ff;" }}
+                InputLabelProps={{ style: { color: "#6c25ff" } }}
+            />
+            <TextField
+                id="outlined-required"
+                label="company"
+                defaultValue=""
+                placeholder="Enter company name"
+                type="text" name="company" onChange={handleChangeByUser}
+                size="small"
+                inputProps={{ color: "#6c25ff;" }}
+                InputLabelProps={{ style: { color: "#6c25ff", } }}
+            />
             <div>
-                <p>Are you a agency *</p>
-                <label htmlFor="yes">Yes</label>
-                <input id="yes" type="radio"
-                    value={"yes"} name="agency"
-                    checked={userInfo.agency == "yes" ? true : false}
-                    onChange={handleChangeByUser} />
+                <p>Are you a agency  <span style={{ color: "red", }}>
+                    *
+                </span>
+                </p>
+                <Radio
+                    checked={userInfo.agency == "yes"}
+                    onChange={handleChangeByUser}
+                    value="yes"
+                    name="agency"
+                    inputProps={{ color: "#6c25ff;" }}
+                    style={{ color: "#6c25ff" }}
 
-                <label htmlFor="no">No</label>
-                <input id="no" type="radio"
-                    value={"no"} name="agency"
-                    onChange={handleChangeByUser} />
-
+                />
+                <Radio
+                    checked={userInfo.agency == "no"}
+                    onChange={handleChangeByUser}
+                    value="no"
+                    name="agency"
+                    style={{ color: "#6c25ff" }}
+                />
             </div>
-            <button onClick={handleCreateAcount}>Create Account</button>
+            <button className="create-account-btn" onClick={handleCreateAcount}>Create Account</button>
         </div>
     )
 }

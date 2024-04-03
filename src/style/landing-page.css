@@ -2,6 +2,7 @@
 .welcome-page {
   font-size: 20px;
   font-weight: 900;
+  margin-right: 119px;
 }
 .landing-page-p {
   color: grey;
@@ -29,4 +30,5 @@
   .landing-page {
     min-width: 95%;
   }
+  
 }
