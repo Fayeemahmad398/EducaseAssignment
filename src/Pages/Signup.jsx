@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "../style/signup.css"
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -57,6 +57,13 @@ function Signup() {
             return;
         }
     }
+    useEffect(() => {
+        if (JSON.parse(localStorage.getItem("currUser"))) {
+            navigate("/profile")
+        }
+    })
+
+
 
 
     return (
