@@ -1,6 +1,7 @@
 .profile {
   justify-content: flex-start !important;
   padding: 0px !important;
+  margin: 20px;
 }
 .profile-box {
   width: 100%;
@@ -26,7 +27,7 @@
   .name-email {
     font-size: 13px;
   }
-  .profile-box{
+  .profile-box {
     gap: 10px;
   }
 }
